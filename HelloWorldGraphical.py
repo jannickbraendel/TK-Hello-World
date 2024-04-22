@@ -7,7 +7,7 @@ window = Tk()
 window.geometry('250x300')
 window.minsize(250,300)
 
-languageLabel = Label(window, text='Please select a language.', fg='#F6A800', font='Helvetica', justify='center')
+languageLabel = Label(window, text='Please select a language.', fg='#F6A800', font='Helvetica 12 bold', justify='center')
 languageLabel.grid(row=0, sticky='nsew', padx=10, pady=10)
 
 
@@ -27,12 +27,12 @@ def greet(lang):
 # create one button for each language (same config)
 languages = ['Deutsch', 'English', 'French']
 for i in range(3):
-    button = Button(window, text=languages[i], fg='black', command=partial(greet, languages[i]), justify='center',
+    button = Button(window, text=languages[i], fg='black', bg='#F6A800', command=partial(greet, languages[i]), justify='center',
                     font='Helvetica 12', borderwidth=3)
     button.grid(column=0, row=i + 1, sticky='nsew', padx=10, pady=10)
 
 quitButton = Button(window, text='Quit', fg='black', command=window.quit, justify='center', font='Helvetica 10')
-quitButton.grid(column=0, row=4, sticky='nse', padx=(70, 10), pady=(50, 10))
+quitButton.grid(column=0, row=4, sticky='se', padx=(70, 10), pady=(50, 10))
 
 # columns and rows are adjusted when window size is changed
 window.columnconfigure(0, weight=1)
